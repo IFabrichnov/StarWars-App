@@ -10,7 +10,7 @@ src: url("font/ProximaNova.otf") format("truetype");
 }
 
 body {
-    background: #070506 url("img/main-bg.png");
+    background: #070506 url("img/main-bg.png") top right 90% no-repeat;
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
@@ -80,31 +80,90 @@ body {
     background: linear-gradient(90deg, #FB641A 0%, #FC3309 100%);
     border-radius: 300px;
     color: #fff;
-    padding: 25px 75px 25px 34px;
+    padding: 25px 80px 25px 35px;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 16px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .button-play:after {
-    content: '';
+    content: url("img/play.svg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 65px;
     height: 65px;
-    display: block;
     right: 0;
     top: 0;
     border-radius: 50%;
-    background: #fff url("img/play.svg") center no-repeat;
+    background: #fff;
 }
 
 .button-play:before {
     content: '';
-    width: 80px;
-    height: 80px;
+    width: 81px;
+    height: 81px;
     background-color: rgba(255,255,255, 0.3);
     position: absolute;
     top: -8px;
     right: -8px;
     border-radius: 50%;
+}
+
+.episodes {
+    padding: 60px 0;
+}
+
+.episodes__title {
+    font-size: 18px;
+    margin-bottom: 24px;
+    line-height: 150%;
+}
+
+.slider {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.slider__item {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    min-height: 200px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.25);
+
+}
+
+.slider__item:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background:  rgba(80, 80, 80, 0.86);
+    transition: all 0.2s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.slider__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.slider__item:hover:before {
+    background: rgba(64, 101, 255, 0.86);
+
 }
